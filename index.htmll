@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masroxx - Möhtəşəm Təcrübə</title>
+    <!-- Tailwind CSS CDN-i yükləyirik -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter şriftini yükləyirik -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Inter şriftini bütün səhifəyə tətbiq edirik */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Xüsusi sürüşdürmə çubuğu stili */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1A237E; /* Tünd göy rəng */
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4A5568; /* Boz-göy tonu */
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6B7280; /* Daha açıq boz-göy */
+        }
+        /* Hero bölməsindəki fon animasiyası üçün CSS açar kadrlarını təyin edirik */
+        @keyframes blob {
+            0% {
+                transform: scale(1) translate(0px, 0px);
+            }
+            33% {
+                transform: scale(1.1) translate(30px, -50px);
+            }
+            66% {
+                transform: scale(0.9) translate(-20px, 20px);
+            }
+            100% {
+                transform: scale(1) translate(0px, 0px);
+            }
+        }
+        .animate-blob {
+            animation: blob 7s infinite cubic-bezier(0.6, 0.4, 0.4, 0.8);
+        }
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+        .animation-delay-4000 {
+            animation-delay: 4s;
+        }
+    </style>
+</head>
+<body class="bg-blue-950 text-white">
+    <!-- Başlıq Bölməsi - Saytın üst hissəsi və naviqasiya -->
+    <header class="bg-blue-900 shadow-lg py-4 px-6 md:px-12">
+        <nav class="container mx-auto flex justify-between items-center">
+            <!-- Saytın loqosu/adı -->
+            <a href="#" class="text-3xl font-extrabold text-yellow-400 rounded-lg p-2 transition duration-300 hover:text-yellow-300">Masroxx</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#haqqimizda" class="text-blue-200 hover:text-white text-lg font-medium transition duration-300">Haqqımızda</a>
+                <a href="#xidmetler" class="text-blue-200 hover:text-white text-lg font-medium transition duration-300">Xidmətlər</a>
+                <a href="#fürsətlər" class="text-blue-200 hover:text-white text-lg font-medium transition duration-300">Fürsətlər</a>
+                <a href="#əlaqə" class="text-blue-200 hover:text-white text-lg font-medium transition duration-300">Əlaqə</a>
+            </div>
+            <!-- Mobil Naviqasiya Düyməsi - Kiçik ekranlar üçün menyu açma/bağlama -->
+            <button id="mobile-menu-button" class="md:hidden text-blue-200 hover:text-white focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </nav>
+        <!-- Mobil Menyu (Gizli) - Mobil düyməyə basıldıqda görünür -->
+        <div id="mobile-menu" class="md:hidden hidden mt-4 space-y-4 text-center">
+            <a href="#haqqimizda" class="block text-blue-200 hover:text-white text-lg font-medium py-2 transition duration-300">Haqqımızda</a>
+            <a href="#xidmetler" class="block text-blue-200 hover:text-white text-lg font-medium py-2 transition duration-300">Xidmətlər</a>
+            <a href="#fürsətlər" class="block text-blue-200 hover:text-white text-lg font-medium py-2 transition duration-300">Fürsətlər</a>
+            <a href="#əlaqə" class="block text-blue-200 hover:text-white text-lg font-medium py-2 transition duration-300">Əlaqə</a>
+        </div>
+    </header>
+
+    <!-- Hero Bölməsi - Saytın əsas giriş hissəsi, böyük başlıq və fon animasiyası ilə -->
+    <section class="relative h-screen flex items-center justify-center text-center px-4 bg-gradient-to-br from-blue-950 to-blue-800 overflow-hidden">
+        <!-- Fon Şəkilləri - Animasiyalı, bulanıq formalı obyektlər -->
+        <div class="absolute inset-0 z-0 opacity-20">
+            <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-700 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+            <div class="absolute top-1/2 right-1/4 w-72 h-72 bg-blue-600 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+            <div class="absolute bottom-1/4 left-1/3 w-80 h-80 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-3xl">
+            <h2 class="text-5xl md:text-7xl font-extrabold leading-tight mb-6 text-white drop-shadow-lg">
+                Masroxx-a Xoş Gəlmisiniz!
+            </h2>
+            <p class="text-xl md:text-2xl text-blue-200 mb-10">
+                Yenilikçi həllər və bənzərsiz təcrübələr üçün doğru ünvan.
+            </p>
+            <a href="#haqqimizda" class="inline-block bg-yellow-500 text-blue-900 font-bold py-4 px-10 rounded-full text-lg shadow-xl hover:bg-yellow-400 transition duration-300 ease-in-out transform hover:scale-105">
+                Kəşf Etməyə Başla
+            </a>
+        </div>
+    </section>
+
+    <!-- Haqqımızda Bölməsi - Şirkət və ya layihə haqqında məlumat -->
+    <section id="haqqimizda" class="py-16 px-4 md:px-12 bg-blue-900">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-4xl font-bold text-center text-yellow-400 mb-10">Haqqımızda</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="text-lg text-blue-100 leading-relaxed">
+                    <p class="mb-4">
+                        Masroxx olaraq, rəqəmsal dünyada fərq yaratmağı hədəfləyən ehtiraslı bir komandayıq. Hər layihəyə yenilikçi bir baxış bucağı ilə yanaşır, müştərilərimizə xüsusi və effektiv həllər təqdim edirik. Məqsədimiz, gözləntiləri aşaraq qalıcı dəyərlər yaratmaqdır.
+                    </p>
+                    <p>
+                        İllərin təcrübəsi və dinamik quruluşumuzla, texnologiyanın təqdim etdiyi bütün imkanlardan istifadə edərək xəyallarınızı gerçəkləşdiririk. Masroxx, sadəcə bir ad deyil, eyni zamanda keyfiyyət və etibarın simvoludur.
+                    </p>
+                </div>
+                <div class="flex justify-center">
+                    <!-- Haqqımızda bölməsi üçün yer tutucu şəkil -->
+                    <img src="https://placehold.co/400x300/1A237E/FFFFFF?text=Haqqimizda" alt="Haqqımızda Şəkli" class="rounded-xl shadow-2xl transition duration-500 ease-in-out transform hover:scale-105">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Xidmətlər Bölməsi - Təklif olunan xidmətlərin siyahısı -->
+    <section id="xidmetler" class="py-16 px-4 md:px-12 bg-blue-950">
+        <div class="container mx-auto max-w-5xl">
+            <h2 class="text-4xl font-bold text-center text-yellow-400 mb-10">Xidmətlərimiz</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Xidmət Kartı 1: Veb İnkişaf -->
+                <div class="bg-blue-800 p-8 rounded-xl shadow-xl border border-blue-700 hover:border-yellow-500 transition duration-300 ease-in-out transform hover:-translate-y-2">
+                    <div class="text-yellow-400 text-5xl mb-4 text-center">
+                        <!-- Veb İnkişaf SVG İkonu -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-code mx-auto"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-white mb-4 text-center">Veb İnkişaf</h3>
+                    <p class="text-blue-200 text-center">
+                        Müasir və istifadəçi dostu veb-saytlar və tətbiqlər hazırlayırıq. Xəyalınızdakı rəqəmsal varlığı birlikdə quraq.
+                    </p>
+                </div>
+                <!-- Xidmət Kartı 2: Qrafik Dizayn -->
+                <div class="bg-blue-800 p-8 rounded-xl shadow-xl border border-blue-700 hover:border-yellow-500 transition duration-300 ease-in-out transform hover:-translate-y-2">
+                    <div class="text-yellow-400 text-5xl mb-4 text-center">
+                        <!-- Qrafik Dizayn SVG İkonu -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-palette mx-auto"><circle cx="12" cy="12" r="10"/><path d="M16.5 7.5L10 14L8.5 12.5L15 6"/><path d="M18 13V17"/><path d="M14 18H10"/><path d="M7 12H6"/><path d="M12 7V6"/></svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-white mb-4 text-center">Qrafik Dizayn</h3>
+                    <p class="text-blue-200 text-center">
+                        Brendiniz üçün orijinal və təsirli vizual kimliklər, loqolar və marketinq materialları dizayn edirik.
+                    </p>
+                </div>
+                <!-- Xidmət Kartı 3: Rəqəmsal Marketinq -->
+                <div class="bg-blue-800 p-8 rounded-xl shadow-xl border border-blue-700 hover:border-yellow-500 transition duration-300 ease-in-out transform hover:-translate-y-2">
+                    <div class="text-yellow-400 text-5xl mb-4 text-center">
+                        <!-- Rəqəmsal Marketinq SVG İkonu -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-megaphone mx-auto"><path d="m3 11 18-8-2 2-7 7"/><path d="m7 16 4 4 4-4"/><path d="m21 15v4"/><path d="m17 19v4"/><path d="m13 19v4"/></svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-white mb-4 text-center">Rəqəmsal Marketinq</h3>
+                    <p class="text-blue-200 text-center">
+                        Rəqəmsal strategiyalarla brendinizin görünürlüyünü artırır, hədəf auditoriyanıza çatmanızı təmin edirik.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fürsətlər (Reklam) Bölməsi - Xüsusi təkliflər və kampaniyalar -->
+    <section id="fürsətlər" class="py-16 px-4 md:px-12 bg-blue-900">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h2 class="text-4xl font-bold text-center text-yellow-400 mb-10">Xüsusi Fürsətlər və Kampaniyalar</h2>
+            <div class="bg-blue-800 p-8 rounded-xl shadow-xl border border-blue-700 flex flex-col md:flex-row items-center justify-center gap-8">
+                <div class="md:w-1/2">
+                    <!-- Reklam üçün yer tutucu şəkil -->
+                    <img src="https://placehold.co/400x250/1A237E/FFFFFF?text=Etibarli+Xidmet" alt="Etibarlı Xidmət Reklamı" class="rounded-lg shadow-lg w-full h-auto">
+                </div>
+                <div class="md:w-1/2 text-left">
+                    <h3 class="text-3xl font-bold text-white mb-4">Ucuz və Etibarlı Həllər!</h3>
+                    <p class="text-blue-200 text-lg mb-4">
+                        Masroxx olaraq, büdcənizə uyğun, keyfiyyətli və etibarlı xidmətlər təqdim edirik. Layihələrinizdə xərc səmərəliliyini və məlumat təhlükəsizliyini ön planda tutaraq, ən yaxşı nəticələri əldə etməyinizi təmin edirik.
+                    </p>
+                    <p class="text-blue-200 text-lg">
+                        İndi əlaqə saxlayın və sizə özəl fürsətləri qaçırmayın!
+                    </p>
+                    <a href="#əlaqə" class="inline-block mt-6 bg-yellow-500 text-blue-900 font-bold py-3 px-8 rounded-full text-lg shadow-md hover:bg-yellow-400 transition duration-300 ease-in-out transform hover:scale-105">
+                        Təklif Alın
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Əlaqə Bölməsi - İstifadəçilərin sizinlə əlaqə saxlaması üçün forma -->
+    <section id="əlaqə" class="py-16 px-4 md:px-12 bg-blue-950">
+        <div class="container mx-auto max-w-3xl">
+            <h2 class="text-4xl font-bold text-center text-yellow-400 mb-10">Bizimlə Əlaqə Saxlayın</h2>
+            <div class="bg-blue-800 p-8 rounded-xl shadow-xl border border-blue-700">
+                <!-- Formspree inteqrasiyası üçün 'action' və 'method' əlavə edildi -->
+                <!-- id="contact-form" əlavə edildi ki, JavaScript ilə formanı idarə edə bilək -->
+                <form id="contact-form" action="https://formspree.io/f/manbnnze" method="POST" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-blue-200 text-lg font-medium mb-2">Adınız Soyadınız</label>
+                        <!-- 'name' atributu form məlumatlarını göndərmək üçün vacibdir -->
+                        <!-- 'required' atributu əlavə edildi ki, bu sahə boş buraxılmasın -->
+                        <input type="text" id="name" name="name" class="w-full px-5 py-3 rounded-lg bg-blue-700 text-white placeholder-blue-300 focus:outline-none focus:ring-2 focus:ring-yellow-500 transition duration-300" placeholder="Adınız" required>
+                    </div>
+                    <div>
+                        <label for="email" class="block text-blue-200 text-lg font-medium mb-2">E-poçt Ünvanınız</label>
+                        <!-- 'name' atributu form məlumatlarını göndərmək üçün vacibdir -->
+                        <!-- 'required' atributu əlavə edildi ki, bu sahə boş buraxılmasın -->
+                        <input type="email" id="email" name="email" class="w-full px-5 py-3 rounded-lg bg-blue-700 text-white placeholder-blue-300 focus:outline-none focus:ring-2 focus:ring-yellow-500 transition duration-300" placeholder="e-poçt@nümunə.com" required>
+                    </div>
+                    <!-- E-poçt ünvanınız buraya əlavə edildi -->
+                    <div class="text-blue-200 text-lg font-medium">
+                        E-poçt: <a href="mailto:elay.memmedli.03@mail.ru" class="text-yellow-400 hover:underline">elay.memmedli.03@mail.ru</a>
+                    </div>
+                    <!-- Telefon nömrəniz buraya əlavə edildi -->
+                    <div class="text-blue-200 text-lg font-medium">
+                        Telefon: <a href="tel:+994707841414" class="text-yellow-400 hover:underline">(+994) 70-784-14-14</a>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-blue-200 text-lg font-medium mb-2">Mesajınız</label>
+                        <!-- 'name' atributu form məlumatlarını göndərmək üçün vacibdir -->
+                        <!-- 'required' atributu əlavə edildi ki, bu sahə boş buraxılmasın -->
+                        <textarea id="message" name="message" rows="6" class="w-full px-5 py-3 rounded-lg bg-blue-700 text-white placeholder-blue-300 focus:outline-none focus:ring-2 focus:ring-yellow-500 transition duration-300" placeholder="Mesajınızı bura yazın..." required></textarea>
+                    </div>
+                    <!-- Mesaj göndərmə düyməsi -->
+                    <button type="submit" id="submit-button" class="w-full bg-yellow-500 text-blue-900 font-bold py-4 px-8 rounded-full text-lg shadow-md hover:bg-yellow-400 transition duration-300 ease-in-out transform hover:scale-105">
+                        Mesaj Göndər
+                    </button>
+                    <!-- Mesaj statusu üçün yer - bu hissə JavaScript tərəfindən idarə olunacaq -->
+                    <div id="form-status" class="mt-4 text-center font-semibold"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Alt Bilgi Bölməsi - Saytın alt hissəsi, müəllif hüquqları və digər linklər -->
+    <footer class="bg-blue-900 py-8 px-4 md:px-12 text-center text-blue-300 text-sm">
+        <div class="container mx-auto">
+            <p>&copy; 2025 Masroxx. Bütün Hüquqlar Qorunur.</p>
+            <div class="mt-4 space-x-4">
+                <a href="#" class="hover:text-white transition duration-300">Məxfilik Siyasəti</a>
+                <a href="#" class="hover:text-white transition duration-300">İstifadə Şərtləri</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobil menyu açma/bağlama funksiyası
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden'); // 'hidden' sinfini əlavə edir/çıxarır
+        });
+
+        // Form göndərişi üçün JavaScript kodu
+        const form = document.getElementById('contact-form');
+        const formStatus = document.getElementById('form-status');
+        const submitButton = document.getElementById('submit-button');
+
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault(); // Formun standart göndərilməsini dayandırırıq
+
+            submitButton.disabled = true; // Göndər düyməsini deaktiv edirik
+            formStatus.textContent = 'Mesajınız göndərilir...'; // Status mesajını göstəririk
+            formStatus.className = 'mt-4 text-center font-semibold text-blue-300'; // Mesaj stili
+
+            const formData = new FormData(form); // Form məlumatlarını toplayırıq
+
+            try {
+                // Formspree API-nə məlumatları göndəririk
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json' // Cavabı JSON formatında istəyirik
+                    }
+                });
+
+                if (response.ok) { // Əgər cavab uğurludursa (200 OK)
+                    formStatus.textContent = 'Mesajınız uğurla göndərildi! Tezliklə sizinlə əlaqə saxlayacağıq.';
+                    formStatus.className = 'mt-4 text-center font-semibold text-green-400'; // Uğur stili
+                    form.reset(); // Formu təmizləyirik
+                } else { // Əgər göndəriş uğursuz olarsa
+                    const data = await response.json();
+                    if (data.errors) { // Xəta mesajları varsa
+                        // Formspree-dən gələn xəta mesajlarını göstəririk
+                        formStatus.textContent = 'Xəta baş verdi: ' + data.errors.map(error => error.message).join(', ');
+                    } else {
+                        // Ümumi xəta mesajı
+                        formStatus.textContent = 'Mesaj göndərilərkən xəta baş verdi. Zəhmət olmasa, yenidən cəhd edin.';
+                    }
+                    formStatus.className = 'mt-4 text-center font-semibold text-red-400'; // Uğursuzluq stili
+                }
+            } catch (error) { // Şəbəkə xətası və ya digər gözlənilməz xətalar
+                formStatus.textContent = 'Şəbəkə xətası baş verdi. İnternet bağlantınızı yoxlayın və ya yenidən cəhd edin.';
+                formStatus.className = 'mt-4 text-center font-semibold text-red-400'; // Xəta stili
+            } finally {
+                submitButton.disabled = false; // Düyməni yenidən aktiv edirik
+            }
+        });
+    </script>
+</body>
+</html>
